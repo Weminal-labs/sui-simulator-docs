@@ -1,4 +1,40 @@
+import { title } from "process";
+import React, { useState } from "react";
+
+interface FeatureType {
+  title: string;
+  description: string;
+  demo: any;
+}
+
 export const HomepageFeatures = () => {
+  const [features, setFeatures] = useState<FeatureType[]>([
+    {
+      title: "Streamlined Workflow",
+      description:
+        "Leverage our code snippet editor and interactive tutorials to optimize your development process.",
+      demo: require("@site/static/img/sui-simulator.png").default,
+    },
+    {
+      title: "Continuous Learning",
+      description:
+        "Discover new VSCode features and best practices through our engaging learning resources.",
+      demo: require("@site/static/img/docusaurus-social-card.jpg").default,
+    },
+    {
+      title: "Seamless Integration",
+      description:
+        "Enjoy a seamless experience by integrating our tool directly with your Visual Studio Code.",
+      demo: require("@site/static/img/sui-simulator.png").default,
+    },
+  ]);
+  const [selectedFeature, setSelectedFeature] = useState(0);
+
+  const handleSelectFeature = (index) => {
+    console.log(index);
+    setSelectedFeature(index);
+  };
+
   return (
     <div className="flex flex-col min-h-[100dvh]">
       <main className="flex-1">
@@ -100,41 +136,22 @@ export const HomepageFeatures = () => {
               <img
                 alt="VSCode Intro Tool Features"
                 className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last"
-                src={require("@site/static/img/sui-simulator.png").default}
+                src={features[selectedFeature].demo}
               />
               <div className="flex flex-col justify-center space-y-4">
                 <ul className="grid gap-6">
-                  <li>
-                    <div className="grid gap-1">
-                      <h3 className="text-xl font-bold">
-                        Streamlined Workflow
-                      </h3>
-                      <p className="text-gray-500 dark:text-gray-400">
-                        Leverage our code snippet editor and interactive
-                        tutorials to optimize your development process.
-                      </p>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="grid gap-1">
-                      <h3 className="text-xl font-bold">Continuous Learning</h3>
-                      <p className="text-gray-500 dark:text-gray-400">
-                        Discover new VSCode features and best practices through
-                        our engaging learning resources.
-                      </p>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="grid gap-1">
-                      <h3 className="text-xl font-bold">
-                        Seamless Integration
-                      </h3>
-                      <p className="text-gray-500 dark:text-gray-400">
-                        Enjoy a seamless experience by integrating our tool
-                        directly with your Visual Studio Code.
-                      </p>
-                    </div>
-                  </li>
+                  {features.map((feature, index) => {
+                    return (
+                      <li onClick={() => handleSelectFeature(index)}>
+                        <div className="grid gap-1">
+                          <h3 className="text-xl font-bold">{feature.title}</h3>
+                          <p className="text-gray-500 dark:text-gray-400">
+                            {feature.description}
+                          </p>
+                        </div>
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             </div>
