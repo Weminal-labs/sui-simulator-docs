@@ -65,8 +65,8 @@ const config: Config = {
     navbar: {
       title: "Sui Simulator",
       logo: {
-        alt: "My Site Logo",
-        src: "img/logo.svg",
+        alt: "Sui Simulator Logo",
+        src: "img/logo.png",
       },
       items: [
         {
@@ -77,7 +77,7 @@ const config: Config = {
         },
         { to: "/blog", label: "Blog", position: "left" },
         {
-          href: "https://github.com/facebook/docusaurus",
+          href: "https://github.com/Weminal-labs/sui-simulator-vscode",
           label: "GitHub",
           position: "right",
         },
@@ -121,7 +121,7 @@ const config: Config = {
             },
             {
               label: "GitHub",
-              href: "https://github.com/facebook/docusaurus",
+              href: "https://github.com/Weminal-labs/sui-simulator-vscode",
             },
           ],
         },
