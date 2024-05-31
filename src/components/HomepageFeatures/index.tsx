@@ -1,5 +1,5 @@
-import { title } from "process";
 import React, { useState } from "react";
+import styles from "./styles.module.css";
 
 interface FeatureType {
   title: string;
@@ -10,19 +10,25 @@ interface FeatureType {
 export const HomepageFeatures = () => {
   const [features, setFeatures] = useState<FeatureType[]>([
     {
-      title: "Streamlined Workflow",
+      title: "Set up your desired environment",
       description:
         "Leverage our code snippet editor and interactive tutorials to optimize your development process.",
       demo: require("@site/static/img/sui-simulator.png").default,
     },
     {
-      title: "Continuous Learning",
+      title: "Build, publish and call your package",
       description:
         "Discover new VSCode features and best practices through our engaging learning resources.",
-      demo: require("@site/static/img/docusaurus-social-card.jpg").default,
+      demo: require("@site/static/img/demo.gif").default,
     },
     {
-      title: "Seamless Integration",
+      title: "Preview your transaction",
+      description:
+        "Enjoy a seamless experience by integrating our tool directly with your Visual Studio Code.",
+      demo: require("@site/static/img/sui-simulator.png").default,
+    },
+    {
+      title: "Dynamic Graph Visualization",
       description:
         "Enjoy a seamless experience by integrating our tool directly with your Visual Studio Code.",
       demo: require("@site/static/img/sui-simulator.png").default,
@@ -43,12 +49,10 @@ export const HomepageFeatures = () => {
             <div className="grid max-w-[1300px] mx-auto gap-4 px-4 sm:px-6 md:px-10 md:grid-cols-2 md:gap-16">
               <div>
                 <h1 className="lg:leading-tighter text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[3.75rem]">
-                  Unlock Your VSCode Potential
+                  The interface of Sui CLI
                 </h1>
                 <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400 mt-4">
-                  Discover the power of our introductory tool and elevate your
-                  VSCode experience. Streamline your workflow, boost
-                  productivity, and unlock new possibilities.
+                  Open source, free to use, and custom your simulation scenarios
                 </p>
                 <div className="mt-6 space-x-4">
                   <div className="inline-flex h-9 items-center justify-center rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300">
@@ -63,7 +67,7 @@ export const HomepageFeatures = () => {
                 <img
                   alt="VSCode Intro Tool"
                   className="rounded-xl shadow-lg"
-                  src={require("@site/static/img/sui-simulator.png").default}
+                  src={require("@site/static/img/demo.gif").default}
                 />
               </div>
             </div>
@@ -73,11 +77,8 @@ export const HomepageFeatures = () => {
           <div className="container space-y-12 px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
-                  Key Features
-                </div>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                  Elevate Your VSCode Experience
+                  Level up your skills with VSCode Experience
                 </h2>
                 <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
                   Our introductory tool offers a range of powerful features to
@@ -85,29 +86,31 @@ export const HomepageFeatures = () => {
                 </p>
               </div>
             </div>
-            <div className="mx-auto grid items-start gap-8 sm:max-w-4xl sm:grid-cols-2 md:gap-12 lg:max-w-5xl lg:grid-cols-3">
+            <div className="mx-auto grid items-stretch gap-8 sm:max-w-4xl sm:grid-cols-2 md:gap-12 lg:max-w-5xl lg:grid-cols-3">
               <div className="grid gap-1 rounded-lg bg-gray-100 p-6 shadow-lg dark:bg-gray-800">
                 <CodeIcon className="h-8 w-8 text-gray-900 dark:text-gray-50" />
-                <h3 className="text-lg font-bold">Code Snippet Editor</h3>
+                <h3 className="text-lg font-bold">Improve user experience</h3>
                 <p className="text-sm text-gray-500 dark:text-gray-400">
-                  Easily create, manage, and share custom code snippets to
-                  streamline your workflow.
+                  We're simplifying the sui cli commands for a more efficient,
+                  user-friendly experience.
                 </p>
               </div>
               <div className="grid gap-1 rounded-lg bg-gray-100 p-6 shadow-lg dark:bg-gray-800">
                 <BookIcon className="h-8 w-8 text-gray-900 dark:text-gray-50" />
-                <h3 className="text-lg font-bold">Interactive Tutorials</h3>
+                <h3 className="text-lg font-bold">
+                  Create Simulation Scenarios
+                </h3>
                 <p className="text-sm text-gray-500 dark:text-gray-400">
-                  Learn VSCode best practices and discover hidden gems with our
-                  step-by-step interactive tutorials.
+                  It enables transactions with tools that simulate the impact of
+                  updated objects on-chain.
                 </p>
               </div>
               <div className="grid gap-1 rounded-lg bg-gray-100 p-6 shadow-lg dark:bg-gray-800">
                 <PlugIcon className="h-8 w-8 text-gray-900 dark:text-gray-50" />
-                <h3 className="text-lg font-bold">VSCode Integration</h3>
+                <h3 className="text-lg font-bold">Code generation</h3>
                 <p className="text-sm text-gray-500 dark:text-gray-400">
-                  Seamlessly integrate our tool with Visual Studio Code to
-                  enhance your development workflow.
+                  From command line interface to TypeScript SDKs for faster
+                  development.
                 </p>
               </div>
             </div>
@@ -135,15 +138,30 @@ export const HomepageFeatures = () => {
             <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12">
               <img
                 alt="VSCode Intro Tool Features"
-                className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last"
+                className={`mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last ${
+                  selectedFeature === 0 ? "place-self-start" : ""
+                }
+                ${
+                  selectedFeature === features.length - 1
+                    ? "place-self-end"
+                    : ""
+                }`}
                 src={features[selectedFeature].demo}
               />
               <div className="flex flex-col justify-center space-y-4">
                 <ul className="grid gap-6">
                   {features.map((feature, index) => {
                     return (
-                      <li onClick={() => handleSelectFeature(index)}>
-                        <div className="grid gap-1">
+                      <li
+                        className={`grid gap-1 ${
+                          selectedFeature === index
+                            ? styles["feature_selected"]
+                            : ""
+                        } 
+                        `}
+                        onClick={() => handleSelectFeature(index)}
+                      >
+                        <div className={`grid gap-1 p-2`}>
                           <h3 className="text-xl font-bold">{feature.title}</h3>
                           <p className="text-gray-500 dark:text-gray-400">
                             {feature.description}
