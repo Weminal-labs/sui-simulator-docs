@@ -55,20 +55,29 @@ export const HomepageFeatures = () => {
                   Open source, free to use, and custom your simulation scenarios
                 </p>
                 <div className="mt-6 space-x-4">
-                  <div className="inline-flex h-9 items-center justify-center rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300">
+                  <a
+                    href="https://marketplace.visualstudio.com/items?itemName=weminal-labs.sui-simulator-vscode"
+                    target="_blank"
+                    className="inline-flex h-9 items-center justify-center rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
+                  >
                     Download
-                  </div>
+                  </a>
                   <div className="inline-flex h-9 items-center justify-center rounded-md border border-gray-200 border-gray-200 bg-white px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-800 dark:border-gray-800 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus-visible:ring-gray-300">
                     Try Online
                   </div>
                 </div>
               </div>
               <div className="flex flex-col items-start space-y-4">
-                {/* <img
-                  alt="VSCode Intro Tool"
-                  className="rounded-xl shadow-lg"
-                  src={require("@site/static/img/demo.gif").default}
-                /> */}
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/BHRxeF_visM?si=v0M2tTDN-wfWtM9w"
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                ></iframe>
               </div>
             </div>
           </div>
