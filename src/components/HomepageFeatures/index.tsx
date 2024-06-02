@@ -13,25 +13,25 @@ export const HomepageFeatures = () => {
       title: "Set up your desired environment",
       description:
         "Leverage our code snippet editor and interactive tutorials to optimize your development process.",
-      demo: require("@site/static/img/sui-simulator.png").default,
+      demo: require("@site/static/img/setup-env.gif").default,
     },
     {
       title: "Build, publish and call your package",
       description:
         "Discover new VSCode features and best practices through our engaging learning resources.",
-      demo: require("@site/static/img/sui-simulator.png").default,
+      demo: require("@site/static/img/build-publish-call.gif").default,
     },
     {
       title: "Preview your transaction",
       description:
         "Enjoy a seamless experience by integrating our tool directly with your Visual Studio Code.",
-      demo: require("@site/static/img/sui-simulator.png").default,
+      demo: require("@site/static/img/preview-transaction.gif").default,
     },
     {
       title: "Dynamic Graph Visualization",
       description:
         "Enjoy a seamless experience by integrating our tool directly with your Visual Studio Code.",
-      demo: require("@site/static/img/sui-simulator.png").default,
+      demo: require("@site/static/img/dyn-obj-graph.gif").default,
     },
   ]);
   const [selectedFeature, setSelectedFeature] = useState(0);
@@ -69,6 +69,7 @@ export const HomepageFeatures = () => {
               </div>
               <div className="flex flex-col items-start space-y-4">
                 <iframe
+                  className="rounded-xl"
                   width="560"
                   height="315"
                   src="https://www.youtube.com/embed/BHRxeF_visM?si=v0M2tTDN-wfWtM9w"
@@ -130,18 +131,12 @@ export const HomepageFeatures = () => {
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
-                  About
+                  Demo
                 </div>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                  Empowering Developers with VSCode Mastery
+                  Our Demo Features
                 </h2>
-                <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                  Our introductory tool is designed to help developers of all
-                  skill levels unlock the full potential of Visual Studio Code.
-                  With a focus on simplicity, efficiency, and continuous
-                  learning, we're committed to transforming your VSCode
-                  experience.
-                </p>
+                <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400"></p>
               </div>
             </div>
             <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12">
@@ -184,68 +179,9 @@ export const HomepageFeatures = () => {
             </div>
           </div>
         </section>
-        <section className="w-full py-12 md:py-24 lg:py-32" id="about">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
-                  About
-                </div>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                  Empowering Developers with VSCode Mastery
-                </h2>
-                <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                  Our introductory tool is designed to help developers of all
-                  skill levels unlock the full potential of Visual Studio Code.
-                  With a focus on simplicity, efficiency, and continuous
-                  learning, we're committed to transforming your VSCode
-                  experience.
-                </p>
-              </div>
-            </div>
-            <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12">
-              <img
-                alt="VSCode Intro Tool Features"
-                className={`mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last ${
-                  selectedFeature === 0 ? "place-self-start" : ""
-                }
-                ${
-                  selectedFeature === features.length - 1
-                    ? "place-self-end"
-                    : ""
-                }`}
-                src={features[selectedFeature].demo}
-              />
-              <div className="flex flex-col justify-center space-y-4">
-                <ul className="grid gap-6">
-                  {features.map((feature, index) => {
-                    return (
-                      <li
-                        className={`grid gap-1 ${
-                          selectedFeature === index
-                            ? styles["feature_selected"]
-                            : ""
-                        } 
-                        `}
-                        onClick={() => handleSelectFeature(index)}
-                      >
-                        <div className={`grid gap-1 p-2`}>
-                          <h3 className="text-xl font-bold">{feature.title}</h3>
-                          <p className="text-gray-500 dark:text-gray-400">
-                            {feature.description}
-                          </p>
-                        </div>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
+        {/* <section className="w-full py-12 md:py-24 lg:py-32">
           <div className="container mx-auto px-4 py-12 md:px-6 lg:py-16">
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-1 lg:grid-cols-2">
               <div className="group rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <img
                   src={require("@site/static/img/sui-simulator.png").default}
@@ -280,26 +216,9 @@ export const HomepageFeatures = () => {
                   </p>
                 </div>
               </div>
-              <div className="group rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <img
-                  src={require("@site/static/img/sui-simulator.png").default}
-                  alt="Grid Item 3"
-                  width={600}
-                  height={400}
-                  className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="p-4 bg-white dark:bg-gray-900">
-                  <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors duration-300">
-                    Grid Item 3
-                  </h3>
-                  <p className="text-gray-500 dark:text-gray-400 line-clamp-2">
-                    This is a short description of the third grid item.
-                  </p>
-                </div>
-              </div>
             </div>
           </div>
-        </section>
+        </section> */}
       </main>
     </div>
   );
