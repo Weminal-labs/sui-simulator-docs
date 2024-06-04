@@ -13,25 +13,25 @@ export const HomepageFeatures = () => {
       title: "Set up your desired environment",
       description:
         "Leverage our code snippet editor and interactive tutorials to optimize your development process.",
-      demo: require("@site/static/img/setup-env.gif").default,
+      demo: "https://we-simulate-bucket.s3.ap-southeast-1.amazonaws.com/setup-env.gif",
     },
     {
       title: "Build, publish and call your package",
       description:
         "Discover new VSCode features and best practices through our engaging learning resources.",
-      demo: require("@site/static/img/build-publish-call.gif").default,
+      demo: "https://we-simulate-bucket.s3.ap-southeast-1.amazonaws.com/build-publish-call.gif",
     },
     {
       title: "Preview your transaction",
       description:
         "Enjoy a seamless experience by integrating our tool directly with your Visual Studio Code.",
-      demo: require("@site/static/img/preview-transaction.gif").default,
+      demo: "https://we-simulate-bucket.s3.ap-southeast-1.amazonaws.com/preview-transaction.gif",
     },
     {
       title: "Dynamic Graph Visualization",
       description:
         "Enjoy a seamless experience by integrating our tool directly with your Visual Studio Code.",
-      demo: require("@site/static/img/dyn-obj-graph.gif").default,
+      demo: "https://we-simulate-bucket.s3.ap-southeast-1.amazonaws.com/dyn-obj-graph.gif",
     },
   ]);
   const [selectedFeature, setSelectedFeature] = useState(0);
